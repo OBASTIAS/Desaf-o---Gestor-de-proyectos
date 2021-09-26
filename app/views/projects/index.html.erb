@@ -1,0 +1,45 @@
+
+<form> 
+    <h3>Buscar projecto por estado:</h3>
+    <br>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault04">Estado del projecto</label>
+      <select class="custom-select" name="state">
+        <option value= "0" >propuesta</option>
+        <option value= "1" >En Progreso</option>
+        <option value= "2 ">Terminando</option>
+        <option value= "">todo</option>
+      </select>
+      <br>
+      <br>
+      <button class="btn btn-outline-primary" type="submit">Buscar projecto</button>
+    </div>
+  
+  
+</form>
+<br>
+<table class="table table-hover">
+  <thead class="thead-light ">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Fecha inicio</th>
+      <th scope="col">Fecha termino</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+    <tr>
+        <td><%= project.id%></td>
+        <td><%= project.name%></td>
+        <td><%= project.description%></td>
+        <td><%= project.state%></td>
+        <td><%= project.initial_date%></td>
+        <td><%= project.finish_date%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
